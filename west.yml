@@ -1,0 +1,21 @@
+manifest:
+  version: "0.12"
+
+  projects:
+#    - name: zephyr
+#      remote: zephyrproject
+#      revision: main
+#      path: zephyr
+
+    - name: zephyr
+      url: https://github.com/zephyrproject-rtos/zephyr
+      revision: zephyr-v3.3.0
+      import:
+        file: west.yml
+        path-prefix: deps
+        name-allowlist:
+                - hal_nordic
+                - nrfxlib
+
+  self:
+    path: app
