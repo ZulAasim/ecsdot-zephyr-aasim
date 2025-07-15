@@ -44,3 +44,17 @@ imports the packages written under name-allowlist
 west sdk install --toolchain riscv64-zephyr-elf
 ```
 
+## Experimenting with Manifest
+```
+mkdir aasim
+cd aasim/
+west init -m https://github.com/ZulAasim/ecsdot-zephyr-aasim
+west update
+west build -p -b ganymed_sk/sy120_gbm app/
+```
+
+
+Objdump
+
+**  /root/zephyr-sdk-0.17.2/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-objdump -x -D -S -s   /root/aasim/build/zephyr/zephyr.elf **
+
