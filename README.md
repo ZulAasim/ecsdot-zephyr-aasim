@@ -48,8 +48,13 @@ west sdk install --toolchain riscv64-zephyr-elf
 ```
 mkdir aasim
 cd aasim/
+python3 -m venv ./.venv
+source ./.venv/bin/activate
+pip install west
 west init -m https://github.com/ZulAasim/ecsdot-zephyr-aasim
 west update
+west zephyr-export
+west packages pip --install
 west build -p -b ganymed_sk/sy120_gbm app/
 ```
 
