@@ -46,17 +46,28 @@ west sdk install --toolchain riscv64-zephyr-elf
 
 ## Experimenting with Manifest
 ```
-mkdir aasim
-cd aasim/
 python3 -m venv ./.venv
 source ./.venv/bin/activate
-pip install west
-west init -m https://github.com/ZulAasim/ecsdot-zephyr-aasim
+
+# already installed
+# pip install west
+
+west init -m https://github.com/ZulAasim/ecsdot-zephyr-aasim workdir
+cd workdir
 west update
-west zephyr-export
-west packages pip --install
-rm -Rf build/
+
+# no need for these !?
+# west zephyr-export
+# west packages pip --install
+#
+# if fresh there is no borked build/
+# rm -Rf build/
+
 west build -p -b ganymed_sk/sy120_gbm app/
+
+/root/zephyr-sdk-0.17.2/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-objdump -xsDS build/zephyr/zephyr.elf
+
+
 ```
 
 
