@@ -51,16 +51,11 @@ cd aasim/
 python3 -m venv ./.venv
 source ./.venv/bin/activate
 pip install west
-west init -m https://github.com/ZulAasim/ecsdot-zephyr-aasim [foobar]
-# inside aasim / foobar etc.
+west init -m https://github.com/ZulAasim/ecsdot-zephyr-aasim
 west update
-# for cmake
 west zephyr-export
-# ???
 west packages pip --install
-# for zephyr env 
-. ./deps/zephyr/zephyr-env.sh
-
+rm -Rf build/
 west build -p -b ganymed_sk/sy120_gbm app/
 ```
 
@@ -68,4 +63,3 @@ west build -p -b ganymed_sk/sy120_gbm app/
 Objdump
 
 **  /root/zephyr-sdk-0.17.2/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-objdump -x -D -S -s   /root/aasim/build/zephyr/zephyr.elf **
-
