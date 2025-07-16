@@ -67,6 +67,7 @@ west build -p -b ganymed_sk/sy120_gbm app/
 
 /root/zephyr-sdk-0.17.2/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-objdump -xsDS build/zephyr/zephyr.elf
 
+/root/zephyr-sdk-0.17.2/riscv64-zephyr-elf/bin/riscv64-zephyr-elf-objdump -xsDS build/zephyr/zephyr.elf > zephyr-elf-dump.s
 
 ```
 
