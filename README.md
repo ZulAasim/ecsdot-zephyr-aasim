@@ -44,6 +44,10 @@ imports the packages written under name-allowlist
 west sdk install --toolchain riscv64-zephyr-elf
 ```
 
+## Zephyr Example Application
+
+Look at the very complete [example-application](https://github.com/zephyrproject-rtos/example-application) !!
+
 ## Experimenting with Manifest
 ```
 python3 -m venv ./.venv
